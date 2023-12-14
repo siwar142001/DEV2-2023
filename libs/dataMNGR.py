@@ -12,7 +12,6 @@ class DATA_MNGR :
         """
         entries_data = {
             "total_capacity": self.total_capacity,
-            "levels": self.levels,
             "occupied_spots": self.occupied_spots,
             "occupied_handicapped_spots": self.occupied_handicapped_spots,
             "occupied_motorcycle_spots": self.occupied_motorcycle_spots,
