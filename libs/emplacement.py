@@ -1,5 +1,5 @@
 import random 
-from dataMNGR import * 
+
 
 class Emplacement : 
     """ doc
@@ -7,7 +7,12 @@ class Emplacement :
             level (int)
             """
     
-    
+    def __init__(self, spot_number , occupied_spots,vehicle_type):
+        self.spot_number = spot_number
+        self.occupied_spots = occupied_spots
+        self.vehicle_type = vehicle_type
+        
+     
     def park_vehicle(self, level, vehicle_type, duration=None, handicapped=False):
         """
         Park a vehicle on the specified level.
@@ -111,36 +116,7 @@ class Emplacement :
                     
             raise ValueError(f"No available daily parking spots on {self.levels[1]['type']} for {vehicle_type}.")
 
-    def park_handicapped(self, level, vehicle_type):
-        """
-        Park a handicapped vehicle on the specified level.
-
-        Args:
-            level (int): The level on which to park the handicapped vehicle.
-            vehicle_type (str): The type of the handicapped vehicle to be parked.
-        """
-        if not self.validate_level(level):
-            return
-
-        if vehicle_type == "motorcycle":
-            raise ValueError("Motorcycles cannot park in handicapped spots.")
-
-        # Calculate the number of spots needed for a handicapped vehicle
-        handicapped_spots_needed = 2
-
-        for i in range(len(self.occupied_handicapped_spots[level]) - handicapped_spots_needed + 1):
-            if all(not self.occupied_handicapped_spots[level][j] for j in range(i, i + handicapped_spots_needed)):
-                # Found available handicapped spots
-                for j in range(i, i + handicapped_spots_needed):
-                    self.occupied_handicapped_spots[level][j] = True
-                # Handicapped vehicle occupies two normal spots.
-                spot_numbers = " and ".join(str(1 * j) for j in range(i, i + handicapped_spots_needed))
-                return(f"A {vehicle_type} (handicapped) is parked on {self.levels[level]['type']}, spots {spot_numbers}.")
-                
-
-        # No available handicapped spots
-        raise ValueError(f"No available handicapped spots on {self.levels[level]['type']} for {vehicle_type}.")
-
+    
     def leave_parking(self, level, spot_number):
         """
         Remove a vehicle from the specified spot on the level.

@@ -1,0 +1,307 @@
+{
+  "parking": {
+    "total_places": 50,
+    "available_places": 50,
+    "occupied_places": 0,
+    "regular_places": [
+      {
+        "id": 1,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 2,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 3,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 4,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 5,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 6,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 7,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 8,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 9,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 10,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 11,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 12,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 13,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 14,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 15,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 16,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 17,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 18,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 19,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 20,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 21,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 22,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 23,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 24,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 25,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 26,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 27,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 28,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 29,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 30,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 31,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 32,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 33,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 34,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 35,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 36,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 37,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 38,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 39,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 40,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 41,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 42,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 43,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 44,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 45,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      },
+      {
+        "id": 46,
+        "status": "available",
+        "car_license_plate": null,
+        "entry_time": null
+      }
+    ],
+    "handicap_places": [
+      {
+        "id": 47,
+        "status": "available",
+        "car_license_plate": null
+      },
+      {
+        "id": 48,
+        "status": "available",
+        "car_license_plate": null
+      },
+      {
+        "id": 49,
+        "status": "available",
+        "car_license_plate": null
+      },
+      {
+        "id": 50,
+        "status": "available",
+        "car_license_plate": null
+      }
+    ]
+  }
+}
