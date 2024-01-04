@@ -1,9 +1,11 @@
 from libs.parking import Parking 
-from libs.emplacement import *
-from libs.dataMNGR import DATA_MNGR 
 from libs.vehicule import * 
 from libs.rapport import *
-from libs.emplacement_voiture import *
+from libs.emplacementVoiture import EmplacementVoiture 
+from libs.emplacement_moto import *
+from libs.emplacement import *
+
+
 
 """from libs.emplacement_moto import * """
 import tkinter as tk
@@ -15,17 +17,18 @@ global donnees
 
 
 
-
-
 def main():
     """ doc 
     sddg
     dsgd
     """
- 
+
+            
+            
     
 def option1():
-    print("Option 1 choisie")
+
+    
     # Création de la fenêtre principale
     global window1
     window1 = tk.Tk()
@@ -199,20 +202,12 @@ def on_ok_button2():
 
     
 
+
 def check_status():
-    with open('data/Niveau0.json', 'r') as file:
-        data = json.load(file)
-    m="Niveau0"+"\n"+afficher_etat_parking(data["parking"])
-    with open('data/Niveau1.json', 'r') as file:
-        data = json.load(file)
-    m+="\n"+"Niveau1"+"\n"+afficher_etat_parking(data["parking"])
-    with open('data/Niveau2.json', 'r') as file:
-        data = json.load(file)
-    m+="\n"+"Niveau2"+"\n"+afficher_etat_parking(data["parking"])
-    with open('data/Niveau3.json', 'r') as file:
-        data = json.load(file)
-    m+="\n"+"Niveau3"+"\n"+afficher_etat_parking(data["parking"])
+    R=Rapport()
+    m=R.consulter_rapport()
     messagebox.showinfo("État du parking", m)
+
      
 
 def Back():
@@ -248,12 +243,18 @@ def on_ok_button():
     window3.destroy()
     
 
-def afficher_etat_parking(parking):
-    nombre_places_disponibles = parking["available_places"]
-    nombre_places_occupees = parking["occupied_places"]
-    
-    message = f"Nombre de places disponibles : {nombre_places_disponibles}\nNombre de places occupées : {nombre_places_occupees}"
-    return message
+def saisie():
+    print("votre application a été executé ")
+    print ("taper le username et le password")
+    while True:
+        try:
+            user_name=input("Username:")
+            mdp=input("Password:")
+        except :
+            print("verifier votre saisie")
+        if user_name == "admin" and mdp == "password":
+            break 
+    return True
 
     
 
@@ -264,18 +265,8 @@ def afficher_etat_parking(parking):
     
 
 def option2():
-    with open('data/Niveau0.json', 'r') as file:
-        data = json.load(file)
-    m="Niveau0"+"\n"+afficher_etat_parking(data["parking"])
-    with open('data/Niveau1.json', 'r') as file:
-        data = json.load(file)
-    m+="\n"+"Niveau1"+"\n"+afficher_etat_parking(data["parking"])
-    with open('data/Niveau2.json', 'r') as file:
-        data = json.load(file)
-    m+="\n"+"Niveau2"+"\n"+afficher_etat_parking(data["parking"])
-    with open('data/Niveau3.json', 'r') as file:
-        data = json.load(file)
-    m+="\n"+"Niveau3"+"\n"+afficher_etat_parking(data["parking"])
+    R=Rapport()
+    m=R.consulter_rapport()
     messagebox.showinfo("État du parking", m)
 
 
@@ -307,7 +298,88 @@ bouton_option2.place(x=200, y=250)
 # Lancement de la boucle principale
 fenetre.mainloop()
 
+a=saisie()
+print("1 : park_vehicule "+ "\n" +"2 : leave_parking"+ "\n" +"3 : check_status"+ "\n" +"4 : Quiter ")   
+while True:
+    try:   
+        n = int(input("donner votre choix : "))
+    except:
+        print("verifier votre choix")
+    if n in range (1,5):
+        break
+    else :
+        print("donner un nombre entre 1 et 4 ")
+     
+if n == 4 : 
+    print("vous avez quiter l'application")
+    
+elif n ==3 : 
+    R=Rapport()
+    m=R.consulter_rapport()
+    print("État du parking", m)
+    
+elif n==1: 
+    while True : 
+        a=input("matricule : ")
+        b=input("type de vehicule : Voiture, Moto, Bateau, Remorque : ")
+        c=input(" entrer le niveau : Niveau0, Niveau1, Niveau2, Niveau3 : ")
+        d=input("handicapé ? taper oui ou non ")
+        if b in ["Voiture", "Moto", "Bateau", "Remorque"] and c in ["Niveau0", "Niveau1", "Niveau2", "Niveau3"] and d in ["oui","non"] :
+            break    
+    v=Vehicule(a,b)
+    fich="data/"+c+".json"
+    with open(fich, 'r') as file:
+                data = json.load(file)
+    
+    numnum=v.enregistrer_entree_voiture(data["parking"],d)
+    print(numnum)
+    with open(fich, 'w') as fichier:
+            json.dump(data, fichier, indent=2)
+        #e=EmplacementVoiture(numnum,data["parking"]["occupied_places"])
+    print("enregistrement a été effectué avec success") # attribuer un num a la place ,,,dansla class emplacement voiture 
+    print(v)
+            # print("ERROR","Places occupées")
+else :
+    P1=Parking(50,1,0,4,0)
+    while True :
+        try:
+            a=input("matricule : ")
+            b=input("type de vehicule : Voiture, Moto, Bateau, Remorque : ")
+            c=input(" entrer le niveau : Niveau0, Niveau1, Niveau2, Niveau3 : ")
+            d=input("handicapé ? taper oui ou non ")
+            if b in ["Voiture", "Moto", "Bateau", "Remorque"] and c in ["Niveau0", "Niveau1", "Niveau2", "Niveau3"] and d in ["oui","non"] :
+                break
+        except:
+            print("verifier votre saisie")
+            
+    v=Vehicule(a,b)
+    fich="data/"+c+".json"
+            #C:\Users\siwar\OneDrive\Bureau\projet-PM 5\projet-PM\data
+    with open(fich, 'r') as file:
+        data = json.load(file)
+    heure1,heure2=v.liberer_place(data["parking"],d)
 
+    print("Ok", "voiture libérée")
+    if c=="Niveau1":
+        date_obj1 = datetime.fromisoformat(heure1)
+        date_obj2 = datetime.fromisoformat(heure2)
+
+        montant=P1.calculate_parking_cost( date_obj1,date_obj2)
+                
+                
+        print("Payement", "Il faut payer"+str(montant)+"Euros")
+                
+            
+    with open(fich, 'w') as fichier:
+        json.dump(data, fichier, indent=2)
+                        
+   
+
+
+    
+
+    
+     
 
 
 if __name__ == "__main__":
