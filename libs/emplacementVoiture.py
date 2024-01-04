@@ -13,9 +13,9 @@ class Emplacement :
 class EmplacementVoiture(Emplacement):  
     """cette class permet de reserver un emplacement pour les autres types de vehicules """
     def __init__(self, numero_place , occupied_spots,handicap):
-         super.__init__(numero_place, occupied_spots)
-         self.vehicle_type = "voiture"
-         self .handicap=handicap
+        super.__init__(numero_place, occupied_spots)
+        self.vehicle_type = "voiture"
+        self .handicap=handicap
          
     def occuper_place(self,n):
         self.numero_place = n
