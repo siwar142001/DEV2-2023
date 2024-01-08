@@ -1,8 +1,8 @@
 {
   "parking": {
     "total_places": 50,
-    "available_places": 42,
-    "occupied_places": 8,
+    "available_places": 41,
+    "occupied_places": 9,
     "regular_places": [
       {
         "id": 1,
@@ -24,9 +24,9 @@
       },
       {
         "id": 4,
-        "status": "available",
-        "car_license_plate": null,
-        "entry_time": null
+        "status": "occupied",
+        "car_license_plate": "456",
+        "entry_time": "2024-01-08T10:54:35.656893"
       },
       {
         "id": 5,
